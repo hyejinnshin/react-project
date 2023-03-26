@@ -1,4 +1,4 @@
-
+ 
 import { useState } from "react";
 import "./ExpenseForm.css";
 const ExpenseForm = (props) => {
@@ -17,14 +17,15 @@ const ExpenseForm = (props) => {
   }
   const submitHandler = (e) => {
      e.preventDefault(); 
-     const  ExpenseData = {
+     const  expenseData = {
       title : enteredTitle,
       amount : enteredAmount,
       date : new Date(enteredDate) 
      }
      setEnteredTitle('')
-     enteredAmount('')
-     enteredDate('')
+     setEnteredAmount('')
+     setEnteredDate('')
+     props.onSaveExpenseData(expenseData)
   }
   return (
     <form onSubmit={submitHandler}>
@@ -35,7 +36,7 @@ const ExpenseForm = (props) => {
           </div>
           <div className="new-expense__control">
             <label htmlFor="">가격</label>
-            <input type="number" min='1' step='1' onChange={amountChangeHandler} value={enteredAmount}/>
+            <input type="number" min='1' step='1' onChange={amountChangeHandler} value={enteredAmount}/>원
           </div>
           <div className="new-expense__control">
             <label htmlFor="">날짜</label>
