@@ -19,7 +19,7 @@ const ExpenseForm = (props) => {
      e.preventDefault(); 
      const  expenseData = {
       title : enteredTitle,
-      amount : enteredAmount,
+      amount : +enteredAmount,
       date : new Date(enteredDate) 
      }
      setEnteredTitle('')
@@ -44,6 +44,7 @@ const ExpenseForm = (props) => {
           </div>
        </div>
        <div className="new-expense__actions">
+        <button onClick={props.onCancel}>취소</button>
         <button type="submit">추가 </button>
        </div>
     </form>

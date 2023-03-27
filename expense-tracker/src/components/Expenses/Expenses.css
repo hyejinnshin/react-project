@@ -6,3 +6,9 @@
     max-width: 95%;
 
   }
+
+  .no_data {
+    color: #fff;
+    text-align: center;
+    padding: 40px 0;
+  }
